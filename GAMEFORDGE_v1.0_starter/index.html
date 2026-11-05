@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GAMEFORDGE — v1.0</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">G</span><div><strong>GAMEFORDGE</strong><small>YOUR IDEAS. YOUR WORLDS.</small></div></div>
+      <div class="top-actions"><span class="version">v1.0</span><button id="saveBtn" class="secondary">Save game</button><button id="loadBtn" class="secondary">Load game</button></div>
+    </header>
+
+    <main class="workspace">
+      <aside class="sidebar">
+        <div class="section-label">WORKSPACE</div>
+        <button class="nav-item active"><span>▣</span> Game creator</button>
+        <button class="nav-item" id="newGameBtn"><span>＋</span> New project</button>
+        <div class="side-card">
+          <div class="section-label">YOUR PROJECT</div>
+          <strong id="projectName">Pixel Quest</strong>
+          <p id="projectType">2D platformer · Pixel art</p>
+          <div class="status"><i></i> Ready to play</div>
+        </div>
+        <div class="side-bottom"><span class="pixel-dot"></span> OFFLINE CREATION MODE</div>
+      </aside>
+
+      <section class="main-panel">
+        <div class="page-heading"><div><div class="eyebrow">GAME STUDIO / CREATOR</div><h1>Make something <span>awesome.</span></h1><p>Describe your idea. GAMEFORDGE will shape it into a playable mini-game.</p></div><div class="live-pill"><i></i> ENGINE READY</div></div>
+        <div class="creator-grid">
+          <section class="preview-card">
+            <div class="card-heading"><div><span class="tiny-icon">▣</span><strong>GAME PREVIEW</strong></div><span class="pixel-tag">PIXEL MODE</span></div>
+            <div class="game-wrap"><canvas id="game" width="640" height="360" aria-label="Playable pixel platform game"></canvas><div class="game-overlay" id="startOverlay"><div class="overlay-box"><div class="big-pixel">▶</div><h2>YOUR WORLD AWAITS</h2><p>Press play to jump into the game.</p><button id="playBtn" class="primary">PLAY GAME <span>▶</span></button></div></div></div>
+            <div class="game-controls"><span><kbd>A</kbd><kbd>D</kbd> or <kbd>←</kbd><kbd>→</kbd> Move</span><span><kbd>SPACE</kbd> Jump</span><span class="score" id="score">GEMS: 0</span></div>
+          </section>
+
+          <section class="assistant-card">
+            <div class="card-heading"><div><span class="bot-icon">✦</span><strong>GAMEFORDGE</strong></div><span class="online-label">● READY</span></div>
+            <div class="chat-log" id="chatLog"><div class="message bot"><span class="avatar">G</span><div><b>GAMEFORGE</b><p>Yo, creator! Tell me what kind of game you want. I can change the world, difficulty, and game style using your prompt.</p></div></div><div class="suggestions"><button class="suggestion">Make it a spooky forest</button><button class="suggestion">Add more gems</button><button class="suggestion">Make it harder</button></div></div>
+            <form id="promptForm" class="prompt-form"><textarea id="promptInput" rows="2" placeholder="Describe your game idea..." aria-label="Describe your game"></textarea><button class="send-btn" type="submit" aria-label="Send prompt">➤</button></form>
+            <div class="assistant-foot">PIXEL ENGINE · LOCAL CREATION</div>
+          </section>
+        </div>
+
+        <section class="tools-row">
+          <div class="tool-card"><span class="tool-symbol">◈</span><div><b>WORLD</b><select id="worldSelect"><option value="meadow">Pixel Meadow</option><option value="forest">Mystic Forest</option><option value="lava">Lava Caverns</option><option value="night">Neon Night</option></select></div></div>
+          <div class="tool-card"><span class="tool-symbol">⚔</span><div><b>DIFFICULTY</b><select id="difficulty"><option value="easy">Chill</option><option value="normal" selected>Normal</option><option value="hard">Hard</option></select></div></div>
+          <div class="tool-card"><span class="tool-symbol">✦</span><div><b>GAME TYPE</b><select id="gameType"><option value="platformer">Platformer</option><option value="collector">Gem collector</option><option value="runner">Endless runner</option></select></div></div>
+          <button id="restartBtn" class="restart-card"><span>↻</span><b>RESTART GAME</b></button>
+        </section>
+        <footer>GAMEFORDGE <span>·</span> BUILT FOR CREATORS <span>·</span> v1.0</footer>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
